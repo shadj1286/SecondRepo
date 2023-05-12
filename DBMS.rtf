@@ -1,0 +1,309 @@
+{\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs52\lang9 Database:\par
+\b0\fs32 CREATE DATABSE dbms;\par
+USE dbms;\par
+\par
+ CREATE TABLE department\par
+(\par
+  Dno int(11) NOT NULL,\par
+  Dname varchar(50) DEFAULT NULL,\par
+  Location varchar(50) DEFAULT NULL,\par
+  PRIMARY KEY (Dno)\par
+)\par
+\par
+ INSERT INTO department VALUES\par
+(10,'Accounting','New York'),\par
+(20,'Research','Dallas'),\par
+(30,'Sales','Chicago'),\par
+(40,'Operation','Boston'),\par
+(50,'Marketing','New Delhi');\par
+CREATE TABLE employee\par
+ (\par
+  Eno char(3) NOT NULL,\par
+  Ename varchar(50) NOT NULL,\par
+  Job_type varchar(50) NOT NULL,\par
+  Manager char(3) DEFAULT NULL,\par
+  Hire_date date NOT NULL,\par
+  Dno int(11) DEFAULT NULL,\par
+  Commission decimal(10,2) DEFAULT NULL,\par
+  Salary decimal(7,2) NOT NULL,\par
+  PRIMARY KEY (Eno),\par
+  CONSTRAINT Dno FOREIGN KEY (Dno) REFERENCES department (Dno),\par
+  CONSTRAINT Manager FOREIGN KEY (Manager) REFERENCES employee (Eno)\par
+)\par
+INSERT INTO employee VALUES ('736','Smith','Clerk','790','1981-12-17',20,0.00,1000.00),\par
+('749','Allan','Sales_man','769','1981-02-20',30,300.00,2000.00),\par
+('752','Ward','Sales_man','769','1981-02-22',30,500.00,1300.00),\par
+('756','Jones','Manager','783','1981-04-02',20,0.00,2300.00),\par
+('765','Martin','Sales_man','784','1981-04-22',30,1400.00,1250.00),\par
+('769','Blake','Manager','783','1981-05-01',30,0.00,2870.00),\par
+('778','Clark','Manager','783','1981-06-09',10,0.00,2900.00),\par
+('783','King','President',NULL,'1981-11-17',10,0.00,2950.00),\par
+('784','Turner','Sales_man','769','1981-09-08',30,0.00,1450.00),\par
+('787','Adams','Clerk','778','1983-01-12',20,0.00,1150.00),\par
+('788','Scott','Analyst','756','1982-12-09',20,0.00,2850.00),\par
+('790','James','Clerk','769','1981-12-03',30,0.00,950.00),\par
+('792','Ford','Analyst','756','1981-12-03',20,0.00,2600.00),\par
+('793','Miller','Clerk','788','1982-01-23',40,0.00,1300.00);\par
+\b\fs52\par
+Question:\par
+\b0\fs32 1. Query to display Employee Name, Job, Hire Date, Employee Number; for each employee \par
+with the Employee Number appearing first.\par
+2. Query to display unique Jobs from the Employee Table.\par
+3. Query to display the Employee Name concatenated by a Job separated by a comma.\par
+4. Query to display all the data from the Employee Table. Separate each Column by a comma\par
+and name the said column as THE_OUTPUT.\par
+5. Query to display the Employee Name and Salary of all the employees earning more than\par
+$2850.\par
+6. Query to display Employee Name and Department Number for the Employee No= 79.\par
+7. Query to display Employee Name and Salary for all employees whose salary is not in the\par
+range of $1500 and $2850.\par
+8. Query to display Employee Name and Department No. of all the employees in Dept 10 and\par
+Dept 30 in the alphabetical order by name.\par
+9. Query to display Name and Hire Date of every Employee who was hired in 1981.\par
+10. Query to display Name and Job of all employees who have not assigned a supervisor.\par
+11. Query to display the Name, Salary and Commission for all the employees who earn\par
+commission.\par
+12. Sort the data in descending order of Salary and Commission.\par
+13. Query to display Name of all the employees where the third letter of their name is \lquote A\rquote .\par
+14. Query to display Name of all employees either have two \lquote R\rquote s or have two \lquote A\rquote s in their \par
+name and are either in Dept No = 30 or their Manger\rquote s Employee No = 7788.\par
+15. Query to display Name, Salary and Commission for all employees whose Commission\par
+amount is greater than their Salary increased by 5%.\par
+16. Query to display the Current Date along with the day name.\par
+17. Query to display Name, Hire Date and Salary Review Date which is the 1st Monday after \par
+six months of employment.\par
+18. Query to display Name and calculate the number of months between today and the date \par
+on which employee was hired of department \lquote Purchase\rquote .\par
+19. Query to display the following for each employee <E-Name> earns < Salary> monthly \par
+but wants < 3 * Current Salary >. Label the Column as Dream Salary.\par
+20. Query to display Name with the 1st letter capitalized and all other letter lower case and\par
+length of their name of all the employees whose name starts with \lquote J\rquote , \rquote A\rquote  and \lquote M\rquote .\par
+21. Query to display Name, Hire Date and Day of the week on which the employee started.\par
+22. Query to display Name, Department Name and Department No for all the employees.\par
+23. Query to display Unique Listing of all Jobs that are in Department number 30.\par
+24. Query to display Name, Dept Name of all employees who have an \lquote A\rquote  in their name.\par
+25. Query to display Name, Job, Department No. And Department Name for all the \par
+employees working at the Dallas location.\par
+26. Query to display Name and Employee no. Along with their supervisor\rquote s Name and the\par
+supervisor\rquote s employee no; along with the Employees\rquote  Name who do not have a supervisor.\par
+27. Query to display Name, Dept No. And Salary of any employee whose department No. \par
+and salary matches both the department no. And the salary of any employee who earns a\par
+commission.\par
+28. Query to display Name and Salaries represented by asterisks, where each asterisk (*)\par
+signifies $100.\par
+29. Query to display the Highest, Lowest, Sum and Average Salaries of all the employees\par
+30. Query to display the number of employees performing the same Job type functions.\par
+31. Query to display the total number of supervisors without listing their names.\par
+32. Query to display the Department Name, Location Name, No. of Employees and the \par
+average salary for all employees in that department.\par
+33. Query to display Name and Hire Date for all employees in the same dept. as Blake.\par
+34. Query to display the Employee No. And Name for all employees who earn more than the\par
+average salary.\par
+35. Query to display Employee Number and Name for all employees who work in a \par
+department with any employee whose name contains a \lquote T\rquote .\par
+36. Query to display the names and salaries of all employees who report to supervisor named \par
+\lquote King\rquote\par
+37. Query to display the department no, name and job for all employees in the Sales \par
+department\par
+38. Display names of employees along with their department name who have more than 20 \par
+years experience\par
+39. Display total number of departments at each location\par
+40. Find the department name in which at least 20 employees work in.\par
+41. Query to find the employee\rquote  name who is not supervisor and name of supervisor \par
+supervising more than 5 employees.\par
+42. Query to display the job type with maximum and minimum employees.\b\fs52\par
+Query\par
+\b0\fs28 1.\par
+  select Eno \par
+     Ename ,\par
+     Job_type ,\par
+     Hire_date \par
+From Employee;\par
+ \par
+2.\par
+SELECT DISTINCT job_type FROM Employee;\par
+ \par
+3\par
+                 \par
+\par
+ SELECT CONCAT(Ename , ', ',job_type)  from Employee;\par
+ \par
+\par
+4.\par
+//concat_ws(separator,string1,string2,\'85)  separator between every strings\par
+//concat(string1,string2,..) no separator only string value add\par
+\par
+SELECT CONCAT_WS(', ',Eno,Ename,\par
+Job_type,SupervisonENO,Hire_date,\par
+Dno,Commission,Salary) \par
+AS THE_OUTPUT \par
+FROM EMPLOYEE;\par
+ \par
+5.\par
+Select Ename,Salary from Employee\par
+Where Salary>2850;\par
+ \par
+6\par
+Select Ename,Dno from Employee\par
+Where Eno=7900;\par
+ \par
+7.\par
+Select Ename,Salary from Employee\par
+Where Salary Not Between 1500 and 2850;\par
+ \par
+\par
+\par
+8\par
+Select Ename,Dno from Employee\par
+Where Dno=10 and Dno= 30\par
+Order by Ename;\par
+ \par
+9\par
+Select Ename, Hire_date from Employee\par
+Where year(Hire_date)=1981;\par
+ \par
+\par
+10\par
+Select Ename, job_type\par
+From Employee\par
+Where SupervisonENO is null;\par
+ \par
+11. SELECT Ename , Salary , Commission\par
+FROM Employee\par
+WHERE Commission > 0.00 AND Commission IS NOT NULL;\par
+ \par
+12.\par
+ALTER TABLE Employee\par
+ORDER BY Salary DESC, Commission DESC;\par
+ \par
+\par
+13.\par
+SELECT Ename FROM Employee\par
+WHERE Ename LIKE '__A%';\par
+ \par
+\par
+14.\par
+SELECT Ename FROM Employee\par
+WHERE (Ename LIKE '%r%r%' OR Ename LIKE '%a%a%')\par
+AND (Dno=30 OR SupervisonENO='778');\par
+ \par
+15\par
+SELECT Ename, Salary, Commission\par
+FROM EMPLOYEE\par
+WHERE Commission > Salary+(Salary*0.05);\par
+\par
+ \par
+16.\par
+SELECT NOW();\par
+ \par
+17.\par
+SELECT Ename,Hire_date,date_add(date_add(Hire_date,INTERVAL 6 MONTH),INTERVAL (7-WEEKDAY(date_add(Hire_date,INTERVAL 6 MONTH))) DAY) AS REVIEW_DATE FROM employee;\par
+ \par
+18.\par
+SELECT Ename,12 *  (YEAR(curdate())-YEAR(Hire_date)) + (MONTH(CURDATE())-MONTH(Hire_date)) AS MONTHS FROM employee;\par
+ \par
+\par
+19.\par
+SELECT concat(Ename,' earns ',Salary,' monthly but wants ', (3*Salary)) AS dream_salary FROM employee;\par
+ \par
+20.\par
+SELECT CONCAT(UPPER(SUBSTRING(Ename,1,1)),LOWER(SUBSTRING(Ename,2,50))) AS NAME,LENGTH(Ename) FROM employee where Ename like 'J%' OR Ename LIKE 'A%' OR Ename LIKE 'M%';\par
+ \par
+21\par
+SELECT Ename,Hire_date , DAYNAME(Hire_date) from employee;\par
+ \par
+22\par
+SELECT a.Ename,b.dname,a.dno FROM employee as a,department as b WHERE a.dno=b.dno;\par
+ \par
+23.\par
+\par
+ \par
+24.\par
+SELECT a.Ename,b.dname from employee as a,department as b WHERE a.dno=b.dno and a.ename LIKE 'A%';\par
+ \par
+25.\par
+SELECT a.Ename,a.dno,b.dname from employee as a,department as b WHERE a.dno=b.dno and b.Location='Dallas';\par
+ \par
+26.\par
+SELECT e.ename,e.eno,s.ename,s.eno from employee as e  LEFT OUTER JOIN employee as s ON e.SupervisionENO=s.eno;\par
+ \par
+27.\par
+SELECT Ename,dno,salary from employee WHERE (dno, salary) in (SELECT dno,salary from employee  WHERE commission >0);\par
+\par
+ \par
+28.\par
+SELECT ename,repeat('*',salary/100) as salary from employee;\par
+ \par
+29.\par
+SELECT sum(salary) as salary, max(salary)as maximum,min(salary) as minimum ,AVG(salary) as average from employee;\par
+\par
+ \par
+30.\par
+SELECT count(job_type) FROM employee GROUP by job_type;\par
+\par
+ \par
+31.\par
+SELECT COUNT(DISTINCT SupervisionENO) FROM employee;\par
+ \par
+32.\par
+SELECT Dno,Location,\par
+(SELECT COUNT(eno) FROM employee WHERE employee.Dno=d.Dno)as noofemplyee ,(SELECT AVG(salary) FROM employee WHERE employee.Dno=d.Dno)as avgsalary FROM department as d;\par
+ \par
+33.\par
+SELECT ename,Hire_date FROM employee WHERE dno in (SELECT dno FROM employee  WHERE Ename='Blake');\par
+ \par
+34.\par
+SELECT Eno,Ename FROM employee WHERE Salary> (SELECT AVG(Salary) FROM employee);\par
+ \par
+35.\par
+SELECT Eno,Ename from employee WHERE dno in (SELECT dno FROM employee WHERE Ename LIKE '%T%');\par
+ \par
+36.\par
+SELECT Ename,Salary from employee WHERE SupervisionENO in (SELECT eno FROM employee WHERE Ename='King');\par
+ \par
+37.\par
+SELECT dno,Ename,Job_type FROM employee WHERE dno in (SELECT dno FROM department WHERE dname='Sales');\par
+ \par
+38.\par
+SELECT Ename,dno from employee WHERE DATE_ADD(NOW(),INTERVAL 20 YEAR)>Hire_date;\par
+ \par
+39.\par
+SELECT COUNT(*) FROM department GROUP by Location;\par
+ \par
+40.\par
+SELECT Dname FROM department WHERE (SELECT COUNT(*)\par
+                                    FROM employee as e WHERE e.dno=dno)>10;\par
+ \par
+41.\par
+\par
+SELECT GROUP_CONCAT(e.Ename ORDER BY e.Ename ASC SEPARATOR ', ') AS employee_names,s.Ename AS supervisor_name\par
+FROM employee e\par
+INNER JOIN employee s ON e.SupervisionENO = s.Eno\par
+WHERE not(e.SupervisionENO is null)\par
+GROUP BY e.SupervisionENO\par
+HAVING COUNT(*)>5;\par
+ \par
+42.\par
+SELECT *   \par
+FROM \par
+    (SELECT COUNT(*) AS no, job_type FROM employee GROUP BY job_type)AS a\par
+ WHERE\par
+no in (\par
+    SELECT MAX(no) \par
+    FROM (\par
+        SELECT COUNT(*) AS no \par
+        FROM employee\par
+        GROUP BY job_type\par
+    ) AS b\par
+) OR no in (\par
+    SELECT MIN(no) \par
+    FROM (\par
+        SELECT COUNT(*) AS no \par
+        FROM employee\par
+        GROUP BY job_type\par
+\~\~\~\~)\~AS\~c\par
+);\fs22\par
+}
+ 
